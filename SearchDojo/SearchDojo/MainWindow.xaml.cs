@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace SearchDojo
 {
@@ -23,6 +24,20 @@ namespace SearchDojo
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var source = UserText.Text;
+            var pattern = UserPattern.Text;
+            StringBuilder sb = new StringBuilder();
+            Regex rgx = new Regex(pattern);
+            foreach (Match match in rgx.Matches(source))
+            {
+                sb.Append($"{match.Value}\n");
+                Console.WriteLine($"{match.Value}\n");
+            }
+            MatchedResult.Text = sb.ToString(); 
         }
     }
 }

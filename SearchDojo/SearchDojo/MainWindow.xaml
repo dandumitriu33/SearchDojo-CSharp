@@ -42,13 +42,16 @@
                 Grid.Column="0"
                 Grid.Row="0"
                 HorizontalAlignment="Left"
-               Content="Text"/>
+               Content="Text"
+                />
             <TextBox
+                x:Name="UserText"
                 Grid.Column="0"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
                 MinWidth="350"
                 MinHeight="300"
+                AcceptsReturn="True"
             />
         </Grid>
 
@@ -69,6 +72,7 @@
                 HorizontalAlignment="Left"
                Content="Matched"/>
             <TextBox
+                x:Name="MatchedResult"
                 Grid.Column="0"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
@@ -93,6 +97,7 @@
                 HorizontalAlignment="Right"
                Content="Pattern"/>
             <TextBox
+                x:Name="UserPattern"
                 Grid.Column="1"
                 Grid.Row="0"
                 HorizontalAlignment="Right"
@@ -106,7 +111,7 @@
             Content="Search"
             Width="150"
             HorizontalAlignment="Left"
-            Margin="10, 0, 0, 0"
+            Margin="10, 0, 0, 0" Click="Button_Click"
             >
         </Button>
 
